@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Request</title>
+    <title>Coding Club</title>
 </head>
 
 <body>
+    <section id="home">
 
-    <section id="navbar">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="home.html">Coding Club</a>
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#projects">Project Models</a>
+                        <a class="nav-link" href="#projectModel">Project Models</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="request.html">Project Request</a>
@@ -41,47 +41,64 @@
                         <a class="nav-link" href="#footer"> Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"> Lot out</a>
+                        <a class="nav-link" href="index.html"> Log out</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
-    </section>
-
-    <!-- request -->
-    <section id="request">
-        <div>
-            <h1>Request Your Project</h1>
+        <!-- Header -->
+        <div class="header">
+            <h1> Knowledge Increases by Sharing</h1>
             <hr>
-        </div>
-        <div>
-            <label for="projectName">Project Name :</label>
-            <br>
-            <input id="projectName" type="text" placeholder="Enter Your Project Name">
-            <br>
-            <label for="userName">Your Name :</label>
-            <br>
-            <input type="text" id="userName" placeholder="Enter Your Name">
-            <br>
-            <label for="requiredSkills">Required Skills :</label>
-            <br>
-            <input id="requiredSkills" type="text" placeholder="Enter required skills">
-            <br>
-            <label for="projectDescription">Describe Briefly about Project :</label>
-            <br>
-            <textarea class="textarea" id="projectDescription" cols="60" rows="5"
-                placeholder="Project Description"></textarea>
-            <br>
-            <button class="btn btn-primary request-button" id="projectSubmit">Submit</button>
-            <br>
-            <button type="button" class="btn btn-info request-button" id="saveProject">Save Project</button>
+            <div class="row header-row">
+                <div class="col-md-5 col-8 header-left">
+                    <img class="header-image" src="images/programming.jpg" alt="Programming">
+                </div>
+                <div class="col-md-5 col-8 header-right">
+                    <h4>Coding club is a autonomous club.</h4>
+                    <p class="header-p">If you are interested to learn web
+                        technologies you can learn here.</p>
+                    <a href="https://www.cdw.com/content/cdw/en/articles/software/top-10-free-web-development-resources.html"
+                        target="_blank" class="btn btn-info header-button">Go Here</a>
+                    <p class="header-p">If you have any Ideas or Projects to suggest please click on the given button
+                    </p>
+                    <a href="request.html" class="btn btn-info header-button">Go Here</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h1 class="projects-h1">Requested Projects</h1>
+    <!-- Projects -->
+
+    <section id="projectModel">
+        <h1>Top Model Projects</h1>
+        <hr>
         <div class="row">
+            <div class="card col-lg-3 col-sm-5 col-7">
+                <img class="card-img-top project-image" src="images/flipkart.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Flipkart</h5>
+                    <p class="card-text">Flipkart is a online Shopping Website</p>
+                    <a href="https://www.flipkart.com/" target="_blank" class="btn btn-primary">Go Flipkart</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-sm-5 col-7">
+                <img class="card-img-top project-image" src="images/udemy.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Udemy</h5>
+                    <p class="card-text">Udemy is online education website</p>
+                    <a href="https://www.udemy.com/" target="_blank" class="btn btn-primary">Go Udemy</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-sm-5 col-7">
+                <img class="card-img-top project-image" src="images/instagram.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Instagram</h5>
+                    <p class="card-text">Instagram is a social media website </p>
+                    <a href="https://www.instagram.com/" target="_blank" class="btn btn-primary">Go Instagram</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -107,6 +124,7 @@
     </footer>
 
     <!-- JavaScript -->
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -116,7 +134,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="request.js"></script>
 </body>
 
 </html>

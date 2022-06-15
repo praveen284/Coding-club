@@ -48,7 +48,7 @@ myForm.addEventListener("submit", function (event) {
         if (formData.email === "") {
             emailErrorMsg.innerHTML = "Required *";
         } else {
-            window.location.href = "index.html"
+            window.location.href = "home.html"
             myName.value = "";
             myEmail.value = "";
         }
