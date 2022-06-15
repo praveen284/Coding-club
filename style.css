@@ -20,6 +20,48 @@ h4 {
     margin-bottom: 5%;
 }
 
+/* login page*/
+
+.login-body {
+    margin: 6% 35%;
+    background-color: #0b2435;
+    color: #eaf6f6;
+}
+
+.container {
+    border: 3px solid #20614a;
+    padding: 10%;
+}
+
+.form-heading {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.form-control {
+    width: 80%;
+}
+
+.login-input {
+    margin: 0%;
+    padding: 0%;
+}
+
+.radio-button {
+    margin: 1%;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.gender-field-heading {
+    margin: 0%;
+}
+
+
+
 
 /* Home */
 
@@ -111,7 +153,7 @@ i {
     font-size: 1.5rem;
 }
 
-/* request */
+/* request page*/
 #request {
     background-color: #063442;
     padding: 2% 10%;
@@ -163,6 +205,10 @@ input {
 }
 
 @media(max-width:1028px) {
+    .login-body {
+        margin: 10% 22%;
+    }
+
     .navbar-brand {
         font-size: 1.5rem;
     }
@@ -212,6 +258,10 @@ input {
 }
 
 @media(max-width:520px) {
+    .login-body {
+        margin: 15% 20%
+    }
+
     .navbar-brand {
         font-size: 1.3rem;
     }
