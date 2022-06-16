@@ -67,6 +67,7 @@ for (let i = 0; i < projectArray.length; i++) {
     createAndAppendProject(projectArray[i], i + 1);
 }
 
+
 // adding review after clicking
 function addProject() {
     let projectsCount = projectArray.length;
@@ -89,26 +90,44 @@ function addProject() {
         projectDescription: inputProjectDescription.value
     }
 
-    if (newProject.projectName === "") {
-        projectNameErrorMsg.innerHTML = "Required *";
-    } else if (newProject.userName === "") {
-        userNameErrorMsg.innerHTML = "Required *";
-        projectNameErrorMsg.innerHTML = "";
-    } else if (newProject.requiredSkills === "") {
-        requiredSkillsErrorMsg.innerHTML = "Required *";
-        userNameErrorMsg.innerHTML = "";
-    } else if (newProject.projectDescription === "") {
-        projectDescErrorMsg.innerHTML = "Required *";
-        requiredSkillsErrorMsg.innerHTML = "";
+    if (newProject.projectName !== "") {
+        if (newProject.userName !== "") {
+            if (newProject.requiredSkills !== "") {
+                if (newProject.projectDescription !== "") {
+                    projectArray.push(newProject);
+                    createAndAppendProject(newProject, projectsCount);
+                    inputProjectName.value = "";
+                    inputUserName.value = "";
+                    inputRequireSkills.value = "";
+                    inputProjectDescription.value = "";
+                    projectDescErrorMsg.innerHTML = "";
+                } else {
+                    projectDescErrorMsg.innerHTML = "Required *";
+                    requiredSkillsErrorMsg.innerHTML = "";
+                }
+            } else {
+                requiredSkillsErrorMsg.innerHTML = "Required *";
+                userNameErrorMsg.innerHTML = "";
+            }
+        } else {
+            userNameErrorMsg.innerHTML = "Required *";
+            projectNameErrorMsg.innerHTML = "";
+        }
     } else {
-        projectArray.push(newProject);
-        createAndAppendProject(newProject, projectsCount);
-        projectDescErrorMsg.innerHTML = "";
-        inputProjectName.value = "";
-        inputUserName.value = "";
-        inputRequireSkills.value = "";
-        inputProjectDescription.value = "";
+        projectNameErrorMsg.innerHTML = "Required *"
     }
+
+
+
+    // if (newProject.userName !== "") {
+    //     userNameErrorMsg.innerHTML = "";
+    // } else if (newProject.requiredSkills !== "") {
+    //     requiredSkillsErrorMsg.innerHTML = "";
+    // } else if (newProject.projectDescription !== "") {
+    //     projectDescErrorMsg.innerHTML = "";
+    // } else {
+
+    // }
 }
 
 // by clicking on submit button
