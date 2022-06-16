@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#projects">Project Models</a>
+                        <a class="nav-link" href="home.html#projectModel">Project Models</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="request.html">Project Request</a>
@@ -41,7 +41,7 @@
                         <a class="nav-link" href="#footer"> Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"> Log out</a>
+                        <a class="nav-link" href="home.html"> Log out</a>
                     </li>
                 </ul>
             </div>
@@ -56,22 +56,28 @@
             <hr>
         </div>
         <div>
-            <label for="projectName">Project Name :</label>
-            <br>
-            <input id="projectName" type="text" placeholder="Enter Your Project Name">
-            <br>
-            <label for="userName">Your Name :</label>
-            <br>
-            <input type="text" id="userName" placeholder="Enter Your Name">
-            <br>
-            <label for="requiredSkills">Required Skills :</label>
-            <br>
-            <input id="requiredSkills" type="text" placeholder="Enter required skills">
-            <br>
+            <div class="mb-3">
+                <label for="projectName">Project Name :</label>
+                <br>
+                <input id="projectName" type="text">
+                <p class="errorMsg" id="projectNameErrorMsg"></p>
+            </div>
+            <div class="mb-3">
+                <label for="userName">Your Name :</label>
+                <br>
+                <input type="text" id="userName">
+                <p class="errorMsg" id="userNameErrorMsg"></p>
+            </div>
+            <div class="mb-3">
+                <label for="requiredSkills">Required Skills :</label>
+                <br>
+                <input id="requiredSkills" type="text">
+                <p class="errorMsg" id="requiredSkillsErrorMsg"></p>
+            </div>
             <label for="projectDescription">Describe Briefly about Project :</label>
             <br>
-            <textarea class="textarea" id="projectDescription" cols="60" rows="5"
-                placeholder="Project Description"></textarea>
+            <textarea class="textarea" id="projectDescription" cols="50" rows="5"></textarea>
+            <p class="errorMsg" id="projectDescErrorMsg"></p>
             <br>
             <button class="btn btn-primary request-button" id="projectSubmit">Submit</button>
             <br>
