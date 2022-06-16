@@ -77,26 +77,38 @@ function addProject() {
     let inputRequireSkills = document.getElementById("requiredSkills");
     let inputProjectDescription = document.getElementById("projectDescription");
 
-    if ((inputProjectName.value === "" || inputUserName.value === "") || (inputRequireSkills.value === "" || inputProjectDescription.value === "")) {
-        alert("Enter valid inputs");
-    } else {
-        let newProject = {
-            projectName: inputProjectName.value,
-            userName: inputUserName.value,
-            requiredSkills: inputRequireSkills.value,
-            projectDescription: inputProjectDescription.value
-        }
+    let projectNameErrorMsg = document.getElementById("projectNameErrorMsg");
+    let userNameErrorMsg = document.getElementById("userNameErrorMsg");
+    let requiredSkillsErrorMsg = document.getElementById("requiredSkillsErrorMsg");
+    let projectDescErrorMsg = document.getElementById("projectDescErrorMsg");
 
-        projectArray.push(newProject);
-
-        createAndAppendProject(newProject, projectsCount);
+    let newProject = {
+        projectName: inputProjectName.value,
+        userName: inputUserName.value,
+        requiredSkills: inputRequireSkills.value,
+        projectDescription: inputProjectDescription.value
     }
 
-    inputProjectName.value = "";
-    inputUserName.value = "";
-    inputRequireSkills.value = "";
-    inputProjectDescription.value = "";
-
+    if (newProject.projectName === "") {
+        projectNameErrorMsg.innerHTML = "Required *";
+    } else if (newProject.userName === "") {
+        userNameErrorMsg.innerHTML = "Required *";
+        projectNameErrorMsg.innerHTML = "";
+    } else if (newProject.requiredSkills === "") {
+        requiredSkillsErrorMsg.innerHTML = "Required *";
+        userNameErrorMsg.innerHTML = "";
+    } else if (newProject.projectDescription === "") {
+        projectDescErrorMsg.innerHTML = "Required *";
+        requiredSkillsErrorMsg.innerHTML = "";
+    } else {
+        projectArray.push(newProject);
+        createAndAppendProject(newProject, projectsCount);
+        projectDescErrorMsg.innerHTML = "";
+        inputProjectName.value = "";
+        inputUserName.value = "";
+        inputRequireSkills.value = "";
+        inputProjectDescription.value = "";
+    }
 }
 
 // by clicking on submit button
@@ -108,3 +120,6 @@ projectSubmit.onclick = function () {
 projectSave.onclick = function () {
     localStorage.setItem("projectArray", JSON.stringify(projectArray));
 }
+
+
+
