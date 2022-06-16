@@ -100,6 +100,9 @@ function addProject() {
                     inputUserName.value = "";
                     inputRequireSkills.value = "";
                     inputProjectDescription.value = "";
+                    projectNameErrorMsg.innerHTML = "";
+                    userNameErrorMsg.innerHTML = "";
+                    requiredSkillsErrorMsg.innerHTML = "";
                     projectDescErrorMsg.innerHTML = "";
                 } else {
                     projectDescErrorMsg.innerHTML = "Required *";
