@@ -54,6 +54,7 @@ h4 {
 .errorMsg {
     color: red;
     font-size: 0.8rem;
+    margin: 0%;
 }
 
 .gender-field-heading {
@@ -158,16 +159,6 @@ i {
     background-color: #063442;
     padding: 2% 10%;
     color: #fff;
-}
-
-
-input {
-    margin: 0% 8% 2%;
-}
-
-.textarea {
-    width: 60%;
-    margin: 0% 8% 1%;
 }
 
 .request-button {
