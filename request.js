@@ -1,12 +1,14 @@
+
 let projectsSection = document.getElementById("projects");
 let projectSubmit = document.getElementById("projectSubmit");
-let projectSave = document.getElementById("saveProject");
 
 // deleting the review
 function onDeleteProject(innerDivId) {
     let projectDiv = document.getElementById(innerDivId);
     projectsSection.removeChild(projectDiv);
     projectArray.splice(innerDivId - 1, 1);
+    localStorage.setItem("projectArray", JSON.stringify(projectArray));
+
 }
 
 // creating the project
@@ -51,6 +53,7 @@ function createAndAppendProject(newProject, projectsCount) {
     }
 }
 
+
 function projectArrayFromLocalStorage() {
     let stringifiedProjectArray = localStorage.getItem("projectArray");
     let parseProjectArray = JSON.parse(stringifiedProjectArray);
@@ -61,11 +64,14 @@ function projectArrayFromLocalStorage() {
     }
 }
 
+
 let projectArray = projectArrayFromLocalStorage();
+
 
 for (let i = 0; i < projectArray.length; i++) {
     createAndAppendProject(projectArray[i], i + 1);
 }
+
 
 
 // adding review after clicking
@@ -95,6 +101,7 @@ function addProject() {
             if (newProject.requiredSkills !== "") {
                 if (newProject.projectDescription !== "") {
                     projectArray.push(newProject);
+                    localStorage.setItem("projectArray", JSON.stringify(projectArray));
                     createAndAppendProject(newProject, projectsCount);
                     inputProjectName.value = "";
                     inputUserName.value = "";
@@ -119,18 +126,6 @@ function addProject() {
     } else {
         projectNameErrorMsg.innerHTML = "Required *"
     }
-
-
-
-    // if (newProject.userName !== "") {
-    //     userNameErrorMsg.innerHTML = "";
-    // } else if (newProject.requiredSkills !== "") {
-    //     requiredSkillsErrorMsg.innerHTML = "";
-    // } else if (newProject.projectDescription !== "") {
-    //     projectDescErrorMsg.innerHTML = "";
-    // } else {
-
-    // }
 }
 
 // by clicking on submit button
@@ -138,10 +133,6 @@ projectSubmit.onclick = function () {
     addProject();
 }
 
-// by clicking on saveProject button
-projectSave.onclick = function () {
-    localStorage.setItem("projectArray", JSON.stringify(projectArray));
-}
 
 
 
